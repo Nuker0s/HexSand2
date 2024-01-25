@@ -13,6 +13,7 @@ namespace Hexsandconsole
         public List<List<Element>> simspace = new List<List<Element>>();
         public Vector2 simsize = new Vector2(25, 25);
         public int particlesize = 12;
+        
 
         #region Inits
         public static void Main(string[] args)

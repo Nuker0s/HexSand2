@@ -6,9 +6,9 @@ namespace Hexsand
 {
     public class Element
     {
-        public virtual int Id { get; set; }
-        public virtual Color Color { get; set; }
-        public virtual bool Ticked { get; set; }
+        public virtual int Id { get; set; } = -1;
+        public virtual Color Color { get; set; } = Color.Magenta;
+        public virtual bool Ticked { get; set; } = false;
 
 
         public Element()
@@ -39,14 +39,14 @@ namespace Hexsand
 
     public class Rock : Element
     {
-        public Rock() : base(id: 1, color: Color.White)
+        public Rock() : base(id: 1, color: new Color(90, 90, 90))
         {
             
         }
     }
     public class Sand : Element
     {
-        public Sand() : base(id: 2, color: Color.Yellow)
+        public Sand() : base(id: 2, color: new Color(217, 195, 90))
         {
             
         }
@@ -54,10 +54,10 @@ namespace Hexsand
         {
             if (Ticked==false)
             {
-                Console.WriteLine("update");
+                //Console.WriteLine("update");
                 if (simspace[(int)pos.x][(int)pos.y + 1].Id == 0)
                 {
-                    Console.WriteLine("update2");
+                    //Console.WriteLine("update2");
                     simspace[(int)pos.x][(int)pos.y + 1] = this;
                     simspace[(int)pos.x][(int)pos.y] = new Voider();
                 }
